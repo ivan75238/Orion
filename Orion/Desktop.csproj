@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F10AD272-994F-469A-A77C-017562F64DA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Orion</RootNamespace>
+    <AssemblyName>Orion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://node3.ortant.ru/orion38_pro/orion38_info/ACU-ORION/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://orion38.info/ACU-ORION/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ED458AD0BAC1DD674CFAF4BE9784BD2D70AA88F3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Desktop_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Orion.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Fontosh.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlRenderer, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Все для проектов\HtmlRenderer 1.5.0.6\Core\NET45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Все для проектов\HtmlRenderer 1.5.0.6\WinForms\NET45\HtmlRenderer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design">
+      <HintPath>..\packages\Microsoft.Chart.Controls.3.5.30729\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientForms\ClietInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\ClietInfoForm.Designer.cs">
+      <DependentUpon>ClietInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\EditClientDopInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\EditClientDopInfoForm.Designer.cs">
+      <DependentUpon>EditClientDopInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\ClientHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\ClientHistoryForm.Designer.cs">
+      <DependentUpon>ClientHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarshrutForms\AddMarshrut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarshrutForms\AddMarshrut.Designer.cs">
+      <DependentUpon>AddMarshrut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkForms\SetInformationInCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkForms\SetInformationInCarForm.Designer.cs">
+      <DependentUpon>SetInformationInCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripForms\AddNewTripForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripForms\AddNewTripForm.Designer.cs">
+      <DependentUpon>AddNewTripForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkForms\ChangeLaeseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkForms\ChangeLaeseForm.Designer.cs">
+      <DependentUpon>ChangeLaeseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForms\ChangeOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\ChangeOrderForm.Designer.cs">
+      <DependentUpon>ChangeOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\functions.cs" />
+    <Compile Include="MarshrutForms\MarshrutArchive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarshrutForms\MarshrutArchive.Designer.cs">
+      <DependentUpon>MarshrutArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkForms\CreateNewCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkForms\CreateNewCarForm.Designer.cs">
+      <DependentUpon>CreateNewCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceForms\CreateNewPriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceForms\CreateNewPriceForm.Designer.cs">
+      <DependentUpon>CreateNewPriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\UserSettingForms\NewPasswod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\UserSettingForms\NewPasswod.Designer.cs">
+      <DependentUpon>NewPasswod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForms\NewOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForms\NewOrderForm.Designer.cs">
+      <DependentUpon>NewOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForms\UserSettingForms\NewUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\UserSettingForms\NewUserForm.Designer.cs">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="MarshrutForms\PromPynktsForms\PromPynktCatalogAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarshrutForms\PromPynktsForms\PromPynktCatalogAddForm.Designer.cs">
+      <DependentUpon>PromPynktCatalogAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarshrutForms\PromPynktsForms\PromPynktCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarshrutForms\PromPynktsForms\PromPynktCatalogForm.Designer.cs">
+      <DependentUpon>PromPynktCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripForms\SetCarInTripForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripForms\SetCarInTripForm.Designer.cs">
+      <DependentUpon>SetCarInTripForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceForms\SetCoutInPriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceForms\SetCoutInPriceForm.Designer.cs">
+      <DependentUpon>SetCoutInPriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkPlanForms\CreateWorkPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkPlanForms\CreateWorkPlanForm.Designer.cs">
+      <DependentUpon>CreateWorkPlanForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClientForms\ClietInfoForm.resx">
+      <DependentUpon>ClietInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\EditClientDopInfoForm.resx">
+      <DependentUpon>EditClientDopInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\ClientHistoryForm.resx">
+      <DependentUpon>ClientHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarshrutForms\AddMarshrut.resx">
+      <DependentUpon>AddMarshrut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkForms\SetInformationInCarForm.resx">
+      <DependentUpon>SetInformationInCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TripForms\AddNewTripForm.resx">
+      <DependentUpon>AddNewTripForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkForms\ChangeLaeseForm.resx">
+      <DependentUpon>ChangeLaeseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\ChangeOrderForm.resx">
+      <DependentUpon>ChangeOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarshrutForms\MarshrutArchive.resx">
+      <DependentUpon>MarshrutArchive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkForms\CreateNewCarForm.resx">
+      <DependentUpon>CreateNewCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceForms\CreateNewPriceForm.resx">
+      <DependentUpon>CreateNewPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\UserSettingForms\NewPasswod.resx">
+      <DependentUpon>NewPasswod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForms\NewOrderForm.resx">
+      <DependentUpon>NewOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForms\UserSettingForms\NewUserForm.resx">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarshrutForms\PromPynktsForms\PromPynktCatalogAddForm.resx">
+      <DependentUpon>PromPynktCatalogAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarshrutForms\PromPynktsForms\PromPynktCatalogForm.resx">
+      <DependentUpon>PromPynktCatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TripForms\SetCarInTripForm.resx">
+      <DependentUpon>SetCarInTripForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceForms\SetCoutInPriceForm.resx">
+      <DependentUpon>SetCoutInPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkPlanForms\CreateWorkPlanForm.resx">
+      <DependentUpon>CreateWorkPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Desktop_TemporaryKey.pfx" />
+    <None Include="Fontosh.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GlobalLib\GlobalLib.csproj">
+      <Project>{38cd3f35-c0a8-4ec5-988f-89704c54106c}</Project>
+      <Name>GlobalLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

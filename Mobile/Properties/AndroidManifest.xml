@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.orion38.pro.jl" android:versionCode="18" android:versionName="1.1.5" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:label="Orion" android:icon="@drawable/Icon"></application>
+</manifest>

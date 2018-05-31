@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/main"
+      android:icon="@drawable/ic_home_black_36dp"
+      android:title="Главная"/>
+    <item
+      android:id="@+id/bron"
+      android:icon="@drawable/ic_star_border_black_36dp"
+      android:title="Бронь" />
+    <item
+      android:id="@+id/about"
+      android:icon="@drawable/ic_info_black_36dp"
+      android:title="О приложении"/>
+    <item
+      android:id="@+id/out"
+      android:icon="@drawable/ic_exit_to_app_black_36dp"
+      android:title="Выход"/>
+  </group>
+</menu>

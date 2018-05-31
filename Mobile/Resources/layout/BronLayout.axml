@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer_layout"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff">
+        <LinearLayout
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#44aa44">
+            <ImageView
+                android:src="@drawable/Button_menu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/Button_menu"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:id="@+id/Label"
+                android:text="Бронирование"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:gravity="fill_vertical" />
+        </LinearLayout>
+        <ScrollView
+            android:layout_below="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/TextViewRouts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Выберите маршрут"
+                    android:textSize="22sp"
+                    android:gravity="left"
+                    android:textColor="#5f6f81"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="20dp" />
+                <Spinner
+                    android:id="@+id/SpinnerRouts"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/InputElemntView"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp" />
+                <TextView
+                    android:id="@+id/TextViewDataLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:gravity="left"
+                    android:text="Дата рейса"
+                    android:textColor="#5f6f81"
+                    android:paddingLeft="20dp" />
+                <TextView
+                    android:id="@+id/TextViewData"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000"
+                    android:text="01.01.1990"
+                    android:textSize="19sp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/InputElemntView"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/TextViewRouts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пункт отправления"
+                    android:textSize="20sp"
+                    android:gravity="left"
+                    android:textColor="#5f6f81"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp" />
+                <Spinner
+                    android:id="@+id/SpinnerPoStart"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/InputElemntView"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp" />
+                <TextView
+                    android:id="@+id/TextViewRouts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пункт назначения"
+                    android:textSize="20sp"
+                    android:gravity="left"
+                    android:textColor="#5f6f81"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp" />
+                <Spinner
+                    android:id="@+id/SpinnerPoEnd"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/InputElemntView"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp" />
+                <ListView
+                    android:id="@+id/ListViewTrips"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:layout_below="@+id/actionbar"
+            android:id="@+id/LoaderView"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+            <ImageView
+                android:id="@+id/LoaderImage"
+                android:src="@anim/LoaderAnimation"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        app:menu="@drawable/nav_menu"
+        android:background="#fff"
+        android:theme="@style/Theme.AppCompat"
+        app:itemTextColor="#757575"
+        app:itemIconTint="#757575" />
+</android.support.v4.widget.DrawerLayout>
