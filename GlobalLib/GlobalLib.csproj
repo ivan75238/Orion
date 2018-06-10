@@ -52,6 +52,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.resx</DependentUpon>
     </Compile>
+    <Compile Include="SmscRu.cs" />
     <Compile Include="Tranzactions.cs" />
     <Compile Include="TypeBilets.cs" />
     <Compile Include="Clients.cs" />

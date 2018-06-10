@@ -471,6 +471,9 @@ namespace Orion
                     }
                     #endregion
                     break;
+                case 11: //Управление Смс
+                    UpdateSmsBalance();
+                    break;
             }
         }
 
@@ -1868,6 +1871,18 @@ namespace Orion
                         ComboBoxWorkPlan.SelectedIndex = 0;
                 }
             }
+        }
+        #endregion
+
+        #region Manage Sms
+        private void ButtonSmsUpdateBalance_Click(object sender, EventArgs e)
+        {
+            UpdateSmsBalance();
+        }
+
+        private void UpdateSmsBalance()
+        {
+            LabelSmsBalance.Text = $"Баланс: {SmscRu.GetBalance().ToString()}";
         }
         #endregion
     }

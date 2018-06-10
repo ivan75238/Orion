@@ -98,6 +98,7 @@
             this.ButtonGetOrders = new MetroFramework.Controls.MetroButton();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.TabTrips = new MetroFramework.Controls.MetroTabPage();
+            this.ButtonDelTrip = new MetroFramework.Controls.MetroButton();
             this.ComboBoxTo = new MetroFramework.Controls.MetroComboBox();
             this.ComboBoxFrom = new MetroFramework.Controls.MetroComboBox();
             this.GridTrip = new MetroFramework.Controls.MetroGrid();
@@ -253,7 +254,11 @@
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.ButtonGraphicFromOrder = new MetroFramework.Controls.MetroButton();
             this.ChartGraphicFromOrder = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ButtonDelTrip = new MetroFramework.Controls.MetroButton();
+            this.TabSms = new System.Windows.Forms.TabPage();
+            this.TabControlManageSms = new MetroFramework.Controls.MetroTabControl();
+            this.TabPageSmsSetting = new MetroFramework.Controls.MetroTabPage();
+            this.ButtonSmsUpdateBalance = new MetroFramework.Controls.MetroButton();
+            this.LabelSmsBalance = new MetroFramework.Controls.MetroLabel();
             this.TabControl.SuspendLayout();
             this.TabOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridOrders)).BeginInit();
@@ -287,6 +292,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChartGrphikTypeBilet)).BeginInit();
             this.TabGraphicFromOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartGraphicFromOrder)).BeginInit();
+            this.TabSms.SuspendLayout();
+            this.TabControlManageSms.SuspendLayout();
+            this.TabPageSmsSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -302,6 +310,7 @@
             this.TabControl.Controls.Add(this.TabWorkPlan);
             this.TabControl.Controls.Add(this.TabNastroiki);
             this.TabControl.Controls.Add(this.TabOtchet);
+            this.TabControl.Controls.Add(this.TabSms);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.ItemSize = new System.Drawing.Size(150, 34);
             this.TabControl.Location = new System.Drawing.Point(20, 60);
@@ -569,6 +578,17 @@
             this.TabTrips.VerticalScrollbarBarColor = true;
             this.TabTrips.VerticalScrollbarHighlightOnWheel = false;
             this.TabTrips.VerticalScrollbarSize = 10;
+            // 
+            // ButtonDelTrip
+            // 
+            this.ButtonDelTrip.Location = new System.Drawing.Point(936, 3);
+            this.ButtonDelTrip.Name = "ButtonDelTrip";
+            this.ButtonDelTrip.Size = new System.Drawing.Size(139, 29);
+            this.ButtonDelTrip.Style = MetroFramework.MetroColorStyle.Green;
+            this.ButtonDelTrip.TabIndex = 20;
+            this.ButtonDelTrip.Text = "Отменить рейс";
+            this.ButtonDelTrip.UseSelectable = true;
+            this.ButtonDelTrip.Click += new System.EventHandler(this.ButtonDelTrip_Click);
             // 
             // ComboBoxTo
             // 
@@ -1182,7 +1202,7 @@
             this.TabPark.HorizontalScrollbarSize = 10;
             this.TabPark.Location = new System.Drawing.Point(4, 38);
             this.TabPark.Name = "TabPark";
-            this.TabPark.Size = new System.Drawing.Size(1108, 337);
+            this.TabPark.Size = new System.Drawing.Size(1223, 337);
             this.TabPark.TabIndex = 5;
             this.TabPark.Text = "Парк";
             this.TabPark.VerticalScrollbarBarColor = true;
@@ -2481,7 +2501,7 @@
             this.TabGraphicZagr.HorizontalScrollbarSize = 10;
             this.TabGraphicZagr.Location = new System.Drawing.Point(4, 38);
             this.TabGraphicZagr.Name = "TabGraphicZagr";
-            this.TabGraphicZagr.Size = new System.Drawing.Size(1104, 295);
+            this.TabGraphicZagr.Size = new System.Drawing.Size(1219, 295);
             this.TabGraphicZagr.TabIndex = 1;
             this.TabGraphicZagr.Text = "График загруженности";
             this.TabGraphicZagr.VerticalScrollbarBarColor = true;
@@ -2585,7 +2605,7 @@
             this.TabGraphicTypeBilet.HorizontalScrollbarSize = 10;
             this.TabGraphicTypeBilet.Location = new System.Drawing.Point(4, 38);
             this.TabGraphicTypeBilet.Name = "TabGraphicTypeBilet";
-            this.TabGraphicTypeBilet.Size = new System.Drawing.Size(1104, 295);
+            this.TabGraphicTypeBilet.Size = new System.Drawing.Size(1219, 295);
             this.TabGraphicTypeBilet.TabIndex = 2;
             this.TabGraphicTypeBilet.Text = "График заказов по типу билетов";
             this.TabGraphicTypeBilet.VerticalScrollbarBarColor = true;
@@ -2689,7 +2709,7 @@
             this.TabGraphicFromOrder.HorizontalScrollbarSize = 10;
             this.TabGraphicFromOrder.Location = new System.Drawing.Point(4, 38);
             this.TabGraphicFromOrder.Name = "TabGraphicFromOrder";
-            this.TabGraphicFromOrder.Size = new System.Drawing.Size(1104, 295);
+            this.TabGraphicFromOrder.Size = new System.Drawing.Size(1219, 295);
             this.TabGraphicFromOrder.TabIndex = 3;
             this.TabGraphicFromOrder.Text = "График по способам оформления заказов";
             this.TabGraphicFromOrder.VerticalScrollbarBarColor = true;
@@ -2778,16 +2798,65 @@
             this.ChartGraphicFromOrder.TabIndex = 26;
             this.ChartGraphicFromOrder.Text = "chart1";
             // 
-            // ButtonDelTrip
+            // TabSms
             // 
-            this.ButtonDelTrip.Location = new System.Drawing.Point(936, 3);
-            this.ButtonDelTrip.Name = "ButtonDelTrip";
-            this.ButtonDelTrip.Size = new System.Drawing.Size(139, 29);
-            this.ButtonDelTrip.Style = MetroFramework.MetroColorStyle.Green;
-            this.ButtonDelTrip.TabIndex = 20;
-            this.ButtonDelTrip.Text = "Отменить рейс";
-            this.ButtonDelTrip.UseSelectable = true;
-            this.ButtonDelTrip.Click += new System.EventHandler(this.ButtonDelTrip_Click);
+            this.TabSms.Controls.Add(this.TabControlManageSms);
+            this.TabSms.Location = new System.Drawing.Point(4, 38);
+            this.TabSms.Name = "TabSms";
+            this.TabSms.Size = new System.Drawing.Size(1223, 337);
+            this.TabSms.TabIndex = 12;
+            this.TabSms.Text = "Управление SMS";
+            // 
+            // TabControlManageSms
+            // 
+            this.TabControlManageSms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabControlManageSms.Controls.Add(this.TabPageSmsSetting);
+            this.TabControlManageSms.Location = new System.Drawing.Point(-1, 0);
+            this.TabControlManageSms.Multiline = true;
+            this.TabControlManageSms.Name = "TabControlManageSms";
+            this.TabControlManageSms.SelectedIndex = 0;
+            this.TabControlManageSms.Size = new System.Drawing.Size(1224, 337);
+            this.TabControlManageSms.Style = MetroFramework.MetroColorStyle.Green;
+            this.TabControlManageSms.TabIndex = 3;
+            this.TabControlManageSms.UseSelectable = true;
+            // 
+            // TabPageSmsSetting
+            // 
+            this.TabPageSmsSetting.Controls.Add(this.LabelSmsBalance);
+            this.TabPageSmsSetting.Controls.Add(this.ButtonSmsUpdateBalance);
+            this.TabPageSmsSetting.HorizontalScrollbarBarColor = true;
+            this.TabPageSmsSetting.HorizontalScrollbarHighlightOnWheel = false;
+            this.TabPageSmsSetting.HorizontalScrollbarSize = 10;
+            this.TabPageSmsSetting.Location = new System.Drawing.Point(4, 38);
+            this.TabPageSmsSetting.Name = "TabPageSmsSetting";
+            this.TabPageSmsSetting.Size = new System.Drawing.Size(1216, 295);
+            this.TabPageSmsSetting.TabIndex = 0;
+            this.TabPageSmsSetting.Text = "Настройки";
+            this.TabPageSmsSetting.VerticalScrollbarBarColor = true;
+            this.TabPageSmsSetting.VerticalScrollbarHighlightOnWheel = false;
+            this.TabPageSmsSetting.VerticalScrollbarSize = 10;
+            // 
+            // ButtonSmsUpdateBalance
+            // 
+            this.ButtonSmsUpdateBalance.Location = new System.Drawing.Point(143, 9);
+            this.ButtonSmsUpdateBalance.Name = "ButtonSmsUpdateBalance";
+            this.ButtonSmsUpdateBalance.Size = new System.Drawing.Size(139, 29);
+            this.ButtonSmsUpdateBalance.Style = MetroFramework.MetroColorStyle.Green;
+            this.ButtonSmsUpdateBalance.TabIndex = 6;
+            this.ButtonSmsUpdateBalance.Text = "Обновить";
+            this.ButtonSmsUpdateBalance.UseSelectable = true;
+            this.ButtonSmsUpdateBalance.Click += new System.EventHandler(this.ButtonSmsUpdateBalance_Click);
+            // 
+            // LabelSmsBalance
+            // 
+            this.LabelSmsBalance.AutoSize = true;
+            this.LabelSmsBalance.Location = new System.Drawing.Point(0, 15);
+            this.LabelSmsBalance.Name = "LabelSmsBalance";
+            this.LabelSmsBalance.Size = new System.Drawing.Size(55, 19);
+            this.LabelSmsBalance.TabIndex = 12;
+            this.LabelSmsBalance.Text = "Баланс:";
             // 
             // MainForm
             // 
@@ -2845,6 +2914,10 @@
             this.TabGraphicFromOrder.ResumeLayout(false);
             this.TabGraphicFromOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartGraphicFromOrder)).EndInit();
+            this.TabSms.ResumeLayout(false);
+            this.TabControlManageSms.ResumeLayout(false);
+            this.TabPageSmsSetting.ResumeLayout(false);
+            this.TabPageSmsSetting.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3030,6 +3103,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private MetroFramework.Controls.MetroButton ButtonDelTrip;
+        private System.Windows.Forms.TabPage TabSms;
+        private MetroFramework.Controls.MetroTabControl TabControlManageSms;
+        private MetroFramework.Controls.MetroTabPage TabPageSmsSetting;
+        private MetroFramework.Controls.MetroLabel LabelSmsBalance;
+        private MetroFramework.Controls.MetroButton ButtonSmsUpdateBalance;
     }
 }
 
