@@ -15,18 +15,21 @@ namespace GlobalLib
             string data = functions.GetDataString(functions.Translate("ApiUrl") + "Rout.GetAll&token=" + user.token + "&sign=" + Sign.CreateSign(user.token));
             return JsonConvert.DeserializeObject<List<Rout>>(data);
         }
+
         public static List<Rout> GetMarshrutInArchive()
         {
             var user = User.GetInstance();
             string data = functions.GetDataString(functions.Translate("ApiUrl") + "Rout.GetRoutsInArchive&token=" + user.token + "&sign=" + Sign.CreateSign(user.token));
             return JsonConvert.DeserializeObject<List<Rout>>(data);
         }
+
         public static List<IApi> GetAllPromPynkt ()
         {
             var user = User.GetInstance();
             string data = functions.GetDataString(functions.Translate("ApiUrl") + "Rout.GetAllLocality&token=" + user.token + "&sign=" + Sign.CreateSign(user.token));
             return JsonConvert.DeserializeObject<List<IApi>>(data);
         }
+
         public static void SetMap (string id, string map)
         {
             var user = User.GetInstance();

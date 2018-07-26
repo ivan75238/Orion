@@ -2,13 +2,13 @@
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Collections.Generic;
 using System.Threading;
 using System.IO;
 using GlobalLib;
 using System.Linq;
 using Orion.WorkPlanForms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Orion
 {
