@@ -74,6 +74,10 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControl = new MetroFramework.Controls.MetroTabControl();
             this.TabOrders = new MetroFramework.Controls.MetroTabPage();
@@ -257,8 +261,17 @@
             this.TabSms = new System.Windows.Forms.TabPage();
             this.TabControlManageSms = new MetroFramework.Controls.MetroTabControl();
             this.TabPageSmsSetting = new MetroFramework.Controls.MetroTabPage();
-            this.ButtonSmsUpdateBalance = new MetroFramework.Controls.MetroButton();
             this.LabelSmsBalance = new MetroFramework.Controls.MetroLabel();
+            this.ButtonSmsUpdateBalance = new MetroFramework.Controls.MetroButton();
+            this.TabNews = new MetroFramework.Controls.MetroTabPage();
+            this.ButtonNewsEdit = new MetroFramework.Controls.MetroButton();
+            this.ButtonNewsDelete = new MetroFramework.Controls.MetroButton();
+            this.ButtonNewsAdd = new MetroFramework.Controls.MetroButton();
+            this.GridNews = new MetroFramework.Controls.MetroGrid();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl.SuspendLayout();
             this.TabOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridOrders)).BeginInit();
@@ -295,6 +308,8 @@
             this.TabSms.SuspendLayout();
             this.TabControlManageSms.SuspendLayout();
             this.TabPageSmsSetting.SuspendLayout();
+            this.TabNews.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridNews)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -311,11 +326,12 @@
             this.TabControl.Controls.Add(this.TabNastroiki);
             this.TabControl.Controls.Add(this.TabOtchet);
             this.TabControl.Controls.Add(this.TabSms);
+            this.TabControl.Controls.Add(this.TabNews);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.ItemSize = new System.Drawing.Size(150, 34);
             this.TabControl.Location = new System.Drawing.Point(20, 60);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 0;
+            this.TabControl.SelectedIndex = 12;
             this.TabControl.Size = new System.Drawing.Size(1231, 379);
             this.TabControl.Style = MetroFramework.MetroColorStyle.Green;
             this.TabControl.TabIndex = 0;
@@ -2346,7 +2362,7 @@
             // DateTimeOtchetParkPO
             // 
             this.DateTimeOtchetParkPO.Location = new System.Drawing.Point(271, 5);
-            this.DateTimeOtchetParkPO.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTimeOtchetParkPO.MinimumSize = new System.Drawing.Size(4, 29);
             this.DateTimeOtchetParkPO.Name = "DateTimeOtchetParkPO";
             this.DateTimeOtchetParkPO.Size = new System.Drawing.Size(200, 29);
             this.DateTimeOtchetParkPO.Style = MetroFramework.MetroColorStyle.Green;
@@ -2364,7 +2380,7 @@
             // DateTimeOtchetParkS
             // 
             this.DateTimeOtchetParkS.Location = new System.Drawing.Point(27, 5);
-            this.DateTimeOtchetParkS.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTimeOtchetParkS.MinimumSize = new System.Drawing.Size(4, 29);
             this.DateTimeOtchetParkS.Name = "DateTimeOtchetParkS";
             this.DateTimeOtchetParkS.Size = new System.Drawing.Size(200, 29);
             this.DateTimeOtchetParkS.Style = MetroFramework.MetroColorStyle.Green;
@@ -2838,6 +2854,15 @@
             this.TabPageSmsSetting.VerticalScrollbarHighlightOnWheel = false;
             this.TabPageSmsSetting.VerticalScrollbarSize = 10;
             // 
+            // LabelSmsBalance
+            // 
+            this.LabelSmsBalance.AutoSize = true;
+            this.LabelSmsBalance.Location = new System.Drawing.Point(0, 15);
+            this.LabelSmsBalance.Name = "LabelSmsBalance";
+            this.LabelSmsBalance.Size = new System.Drawing.Size(55, 19);
+            this.LabelSmsBalance.TabIndex = 12;
+            this.LabelSmsBalance.Text = "Баланс:";
+            // 
             // ButtonSmsUpdateBalance
             // 
             this.ButtonSmsUpdateBalance.Location = new System.Drawing.Point(143, 9);
@@ -2849,14 +2874,139 @@
             this.ButtonSmsUpdateBalance.UseSelectable = true;
             this.ButtonSmsUpdateBalance.Click += new System.EventHandler(this.ButtonSmsUpdateBalance_Click);
             // 
-            // LabelSmsBalance
+            // TabNews
             // 
-            this.LabelSmsBalance.AutoSize = true;
-            this.LabelSmsBalance.Location = new System.Drawing.Point(0, 15);
-            this.LabelSmsBalance.Name = "LabelSmsBalance";
-            this.LabelSmsBalance.Size = new System.Drawing.Size(55, 19);
-            this.LabelSmsBalance.TabIndex = 12;
-            this.LabelSmsBalance.Text = "Баланс:";
+            this.TabNews.Controls.Add(this.ButtonNewsEdit);
+            this.TabNews.Controls.Add(this.ButtonNewsDelete);
+            this.TabNews.Controls.Add(this.ButtonNewsAdd);
+            this.TabNews.Controls.Add(this.GridNews);
+            this.TabNews.HorizontalScrollbarBarColor = true;
+            this.TabNews.HorizontalScrollbarHighlightOnWheel = false;
+            this.TabNews.HorizontalScrollbarSize = 10;
+            this.TabNews.Location = new System.Drawing.Point(4, 38);
+            this.TabNews.Name = "TabNews";
+            this.TabNews.Size = new System.Drawing.Size(1223, 337);
+            this.TabNews.TabIndex = 13;
+            this.TabNews.Text = "Новости";
+            this.TabNews.VerticalScrollbarBarColor = true;
+            this.TabNews.VerticalScrollbarHighlightOnWheel = false;
+            this.TabNews.VerticalScrollbarSize = 10;
+            // 
+            // ButtonNewsEdit
+            // 
+            this.ButtonNewsEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNewsEdit.Location = new System.Drawing.Point(1024, 38);
+            this.ButtonNewsEdit.Name = "ButtonNewsEdit";
+            this.ButtonNewsEdit.Size = new System.Drawing.Size(196, 29);
+            this.ButtonNewsEdit.TabIndex = 20;
+            this.ButtonNewsEdit.Text = "Редактировать";
+            this.ButtonNewsEdit.UseSelectable = true;
+            // 
+            // ButtonNewsDelete
+            // 
+            this.ButtonNewsDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNewsDelete.Location = new System.Drawing.Point(1024, 73);
+            this.ButtonNewsDelete.Name = "ButtonNewsDelete";
+            this.ButtonNewsDelete.Size = new System.Drawing.Size(196, 29);
+            this.ButtonNewsDelete.TabIndex = 19;
+            this.ButtonNewsDelete.Text = "Удалить";
+            this.ButtonNewsDelete.UseSelectable = true;
+            // 
+            // ButtonNewsAdd
+            // 
+            this.ButtonNewsAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonNewsAdd.Location = new System.Drawing.Point(1024, 3);
+            this.ButtonNewsAdd.Name = "ButtonNewsAdd";
+            this.ButtonNewsAdd.Size = new System.Drawing.Size(196, 29);
+            this.ButtonNewsAdd.TabIndex = 18;
+            this.ButtonNewsAdd.Text = "Добавить";
+            this.ButtonNewsAdd.UseSelectable = true;
+            // 
+            // GridNews
+            // 
+            this.GridNews.AllowUserToAddRows = false;
+            this.GridNews.AllowUserToDeleteRows = false;
+            this.GridNews.AllowUserToResizeRows = false;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GridNews.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            this.GridNews.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridNews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridNews.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GridNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridNews.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.GridNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridNews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            this.GridNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridNews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridNews.DefaultCellStyle = dataGridViewCellStyle43;
+            this.GridNews.EnableHeadersVisualStyles = false;
+            this.GridNews.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.GridNews.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GridNews.Location = new System.Drawing.Point(0, 3);
+            this.GridNews.Name = "GridNews";
+            this.GridNews.ReadOnly = true;
+            this.GridNews.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridNews.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.GridNews.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.GridNews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridNews.Size = new System.Drawing.Size(1018, 338);
+            this.GridNews.Style = MetroFramework.MetroColorStyle.Green;
+            this.GridNews.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 125.3985F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Заголовок";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 175.7646F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Текст новости";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.FillWeight = 48.07544F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Дата публикации";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 50.76143F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Статус";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -2918,6 +3068,8 @@
             this.TabControlManageSms.ResumeLayout(false);
             this.TabPageSmsSetting.ResumeLayout(false);
             this.TabPageSmsSetting.PerformLayout();
+            this.TabNews.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridNews)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3108,6 +3260,15 @@
         private MetroFramework.Controls.MetroTabPage TabPageSmsSetting;
         private MetroFramework.Controls.MetroLabel LabelSmsBalance;
         private MetroFramework.Controls.MetroButton ButtonSmsUpdateBalance;
+        private MetroFramework.Controls.MetroTabPage TabNews;
+        private MetroFramework.Controls.MetroButton ButtonNewsEdit;
+        private MetroFramework.Controls.MetroButton ButtonNewsDelete;
+        private MetroFramework.Controls.MetroButton ButtonNewsAdd;
+        private MetroFramework.Controls.MetroGrid GridNews;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
 

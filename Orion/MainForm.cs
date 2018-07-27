@@ -28,6 +28,7 @@ namespace Orion
         List<Price> prices;
         List<OrderInService> OrdersForService;
         List<WorkPlan> plans;
+        private List<News> news;
         FromOrder fromOrder;
         int PositionForSetBilet;
         int CountOrderForOtcehtCars, SrCoutOnTripForOtchetpark, SrCoutOnOrderForOtchetpark;
@@ -473,6 +474,9 @@ namespace Orion
                     break;
                 case 11: //Управление Смс
                     UpdateSmsBalance();
+                    break;
+                case 12: //Управление нвостями на сайте
+                    UpdateTableNews();
                     break;
             }
         }
@@ -1883,6 +1887,19 @@ namespace Orion
         private void UpdateSmsBalance()
         {
             LabelSmsBalance.Text = $"Баланс: {SmscRu.GetBalance().ToString()}";
+        }
+        #endregion
+
+        #region TabNews
+
+        private void UpdateTableNews()
+        {
+            news = News.Get();
+            GridNews.Rows.Clear();
+            foreach (var @new in news)
+            {
+                GridNews.Rows.Add(@new.title, @new.messages, $"{@new.date.ToShortDateString()} {@new.date.ToShortTimeString()}", @new.status == 0 ? "Опубликована" : "Снята с публикации");
+            }
         }
         #endregion
     }
