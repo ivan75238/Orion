@@ -143,6 +143,12 @@
     <Compile Include="MarshrutForms\AddMarshrut.Designer.cs">
       <DependentUpon>AddMarshrut.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewsForms\AddNewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewsForms\AddNewsForm.Designer.cs">
+      <DependentUpon>AddNewsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkForms\SetInformationInCarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MarshrutForms\AddMarshrut.resx">
       <DependentUpon>AddMarshrut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewsForms\AddNewsForm.resx">
+      <DependentUpon>AddNewsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkForms\SetInformationInCarForm.resx">
       <DependentUpon>SetInformationInCarForm.cs</DependentUpon>

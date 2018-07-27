@@ -1808,6 +1808,7 @@ namespace Orion
                 GridViewWorkPlan.Rows.Add("Декабрь", plans[ComboBoxWorkPlan.SelectedIndex].february, resultCount);
             }
         }
+
         private async void ButtonCreateWorkPlan_Click(object sender, EventArgs e)
         {
             if (user.role == "0")
@@ -1829,6 +1830,7 @@ namespace Orion
                     ComboBoxWorkPlan.SelectedIndex = 0;
             }
         }
+
         private async void ButtonEditWorkPlan_Click(object sender, EventArgs e)
         {
             if (user.role == "0")
@@ -1853,6 +1855,7 @@ namespace Orion
                 }
             }
         }
+
         private async void ButtonDeleteWorkPlan_Click(object sender, EventArgs e)
         {
             if (user.role == "0")
@@ -1900,6 +1903,38 @@ namespace Orion
             {
                 GridNews.Rows.Add(@new.title, @new.messages, $"{@new.date.ToShortDateString()} {@new.date.ToShortTimeString()}", @new.status == 0 ? "Опубликована" : "Снята с публикации");
             }
+        }
+
+        private void ButtonNewsAdd_Click(object sender, EventArgs e)
+        {
+            new AddNewsForm().ShowDialog();
+            UpdateTableNews();
+        }
+
+        private void ButtonNewsEdit_Click(object sender, EventArgs e)
+        {
+            if (GridNews.CurrentRow.Index == -1) return;
+            if (GridNews.CurrentRow.Index > news.Count) return;
+            new AddNewsForm(news[GridNews.CurrentRow.Index]).ShowDialog();
+            UpdateTableNews();
+        }
+
+        private void GridNews_SelectionChanged(object sender, EventArgs e)
+        {
+            if (GridNews.CurrentRow.Index == -1) return;
+            if (GridNews.CurrentRow.Index > news.Count) return;
+            ButtonNewsDelete.Text = news[GridNews.CurrentRow.Index].status != 0 ? "Опубликовать" : "Снять с публикации";
+        }
+
+        private void ButtonNewsDelete_Click(object sender, EventArgs e)
+        {
+            if (GridNews.CurrentRow.Index == -1) return;
+            if (GridNews.CurrentRow.Index > news.Count) return;
+            if (news[GridNews.CurrentRow.Index].status == 0)
+                news[GridNews.CurrentRow.Index].Unpublished();
+            else
+                news[GridNews.CurrentRow.Index].Published();
+            UpdateTableNews();
         }
         #endregion
     }

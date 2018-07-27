@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace GlobalLib
@@ -10,7 +7,7 @@ namespace GlobalLib
     public class News
     {
         public string id { get; set; }
-        public string id_user { get; set; }
+        public int id_user { get; set; }
         public string title { get; set; }
         public string messages { get; set; }
         public string image_url { get; set; }
@@ -22,6 +19,26 @@ namespace GlobalLib
         {
             var data = functions.GetDataString($"{functions.Translate("ApiUrl")}News.Get");
             return JsonConvert.DeserializeObject<List<News>>(data);
+        }
+
+        public static void Create(News news)
+        {
+            functions.GetDataString(functions.Translate("ApiUrl") + "News.Create&news=" + JsonConvert.SerializeObject(news));
+        }
+
+        public static void Edit(News news)
+        {
+            functions.GetDataString(functions.Translate("ApiUrl") + "News.Edit&news=" + JsonConvert.SerializeObject(news));
+        }
+
+        public void Published()
+        {
+            functions.GetDataString(functions.Translate("ApiUrl") + $"News.Published&id_news={id}");
+        }
+
+        public void Unpublished()
+        {
+            functions.GetDataString(functions.Translate("ApiUrl") + $"News.Unpublished&id_news={id}");
         }
     }
 }

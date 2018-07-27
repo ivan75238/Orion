@@ -331,7 +331,7 @@
             this.TabControl.ItemSize = new System.Drawing.Size(150, 34);
             this.TabControl.Location = new System.Drawing.Point(20, 60);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 12;
+            this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(1231, 379);
             this.TabControl.Style = MetroFramework.MetroColorStyle.Green;
             this.TabControl.TabIndex = 0;
@@ -2901,6 +2901,7 @@
             this.ButtonNewsEdit.TabIndex = 20;
             this.ButtonNewsEdit.Text = "Редактировать";
             this.ButtonNewsEdit.UseSelectable = true;
+            this.ButtonNewsEdit.Click += new System.EventHandler(this.ButtonNewsEdit_Click);
             // 
             // ButtonNewsDelete
             // 
@@ -2911,6 +2912,7 @@
             this.ButtonNewsDelete.TabIndex = 19;
             this.ButtonNewsDelete.Text = "Удалить";
             this.ButtonNewsDelete.UseSelectable = true;
+            this.ButtonNewsDelete.Click += new System.EventHandler(this.ButtonNewsDelete_Click);
             // 
             // ButtonNewsAdd
             // 
@@ -2921,6 +2923,7 @@
             this.ButtonNewsAdd.TabIndex = 18;
             this.ButtonNewsAdd.Text = "Добавить";
             this.ButtonNewsAdd.UseSelectable = true;
+            this.ButtonNewsAdd.Click += new System.EventHandler(this.ButtonNewsAdd_Click);
             // 
             // GridNews
             // 
@@ -2979,6 +2982,7 @@
             this.GridNews.Size = new System.Drawing.Size(1018, 338);
             this.GridNews.Style = MetroFramework.MetroColorStyle.Green;
             this.GridNews.TabIndex = 17;
+            this.GridNews.SelectionChanged += new System.EventHandler(this.GridNews_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn4
             // 

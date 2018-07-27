@@ -47,11 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiFilePath.cs" />
     <Compile Include="Config.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Config.resx</DependentUpon>
     </Compile>
+    <Compile Include="File.cs" />
     <Compile Include="News.cs" />
     <Compile Include="SmscRu.cs" />
     <Compile Include="Tranzactions.cs" />
