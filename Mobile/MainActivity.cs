@@ -21,7 +21,7 @@ namespace Mobile
         DrawerLayout drawer;
         NavigationView navView;
         View HeaderView;
-        WebView MapView;
+        //WebView MapView;
         RelativeLayout LoaderView;
         ImageView LoaderImage;
         AnimationDrawable AnimationLoader;
@@ -33,7 +33,7 @@ namespace Mobile
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-            MapView = FindViewById<WebView>(Resource.Id.MapView);
+            //MapView = FindViewById<WebView>(Resource.Id.MapView);
             drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             navView = FindViewById<NavigationView>(Resource.Id.nav_view);
             LoaderView = FindViewById<RelativeLayout>(Resource.Id.LoaderView);
@@ -59,7 +59,7 @@ namespace Mobile
             ListViewPO.DividerHeight = 0;
             var paramMarsh = ListViewMarsh.LayoutParameters;
             var paramPO = ListViewPO.LayoutParameters;
-            MapView.Settings.JavaScriptEnabled = true;
+            //MapView.Settings.JavaScriptEnabled = true;
             new Thread(new ThreadStart(delegate //поток для загрузки данных
             {
                 var user = User.GetInstance(0, "", "", GetString(Resource.String.token));
@@ -68,7 +68,7 @@ namespace Mobile
                 {
                     item.GetPromPynkt();
                 }
-                RunOnUiThread(() => MapView.LoadUrl("http://orion38.pro/maps/maps.php?url_map=" + marshruts[0].url_map));
+                //RunOnUiThread(() => MapView.LoadUrl("http://orion38.pro/maps/maps.php?url_map=" + marshruts[0].url_map));
                 paramMarsh.Height = Convert.ToInt32(function.convertDpToPixel(45, this)) * marshruts.Count;
                 paramPO.Height = Convert.ToInt32(function.convertDpToPixel(35, this)) * (marshruts[0].PromPynkt.Count+1);
                 RunOnUiThread(() => ListViewMarsh.Adapter = new RoutAdapter(this, marshruts));
@@ -92,7 +92,7 @@ namespace Mobile
                 else
                     ListViewMarsh.GetChildAt(i).SetBackgroundColor(Color.ParseColor("#ffffff"));
             }
-            MapView.LoadUrl("http://orion38.pro/maps/maps.php?url_map=" + marshruts[e.Position].url_map);
+            //MapView.LoadUrl("http://orion38.pro/maps/maps.php?url_map=" + marshruts[e.Position].url_map);
             ListViewPO.Adapter = new PromPynktAdapter(this, marshruts[e.Position].PromPynkt);
         }
 

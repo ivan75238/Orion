@@ -42,7 +42,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <LinearLayout
+            <!--<LinearLayout
                     android:id="@+id/WebViewContainer"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
@@ -58,7 +58,7 @@
                         android:fitsSystemWindows="true"
                         android:drawingCacheQuality="auto"
                         android:scrollbars="none" />
-                </LinearLayout>
+                </LinearLayout>-->
                 <TextView
                     android:id="@+id/LabelMarshryt"
                     android:layout_width="match_parent"
